@@ -9,7 +9,7 @@
   <a href="https://arxiv.org/abs/2509.03498" target="_blank" style="margin: 2px;">
     <img alt="Arxiv" src="https://img.shields.io/badge/OneCAT-Paper-red?logo=arxiv&logoColor=red"  fill-opacity="1" style="display: inline-block; vertical-align: middle;"/>
   </a>
-  <a href="https://huggingface.co/onecat-ai" target="_blank" style="margin: 2px;">
+  <a href="https://huggingface.co/onecat-ai/OneCAT-3B" target="_blank" style="margin: 2px;">
     <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20OneCAT-Model-yellow" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://onecat-ai.github.io/" target="_blank" style="margin: 2px;">
