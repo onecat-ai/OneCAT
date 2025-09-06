@@ -1,0 +1,27 @@
+FROM pytorch/pytorch:2.5.1-cuda11.8-cudnn9-devel
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    CUDA_HOME=/usr/local/cuda \
+    PATH="$CUDA_HOME/bin:$PATH"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    curl \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace/
+
+COPY requirements.txt /workspace/requirements.txt
+
+RUN pip install --upgrade pip \
+    && pip install ninja \
+    && MAX_JOBS=1 pip install flash-attn --no-build-isolation \
+    && pip install -r requirements.txt \
+    && pip install opencv-fixer==0.2.5 \
+    && python -c "from opencv_fixer import AutoFix; AutoFix()"
+
+CMD ["/bin/bash"]

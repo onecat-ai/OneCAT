@@ -42,6 +42,50 @@ For more details, please refer to the [***OneCAT Technical Report***](https://ar
 
 
 
+## Getting Started
+
+### Installation
+
+- Install 64-bit Python 3.11.8 and PyTorch 2.5.1 ([PyTorch installation guide](https://pytorch.org))
+- Install Python libraries with:  
+  ```bash
+  pip3 install -r requirements.txt
+  ```
+- Download the [OneCAT-3B model](https://huggingface.co/onecat-ai/OneCAT-3B)
+- Download the Infinity Tokenizer [infinity_vae_d32reg.pth](https://huggingface.co/FoundationVision/Infinity/resolve/main/infinity_vae_d32reg.pth?download=true) 
+
+
+### Visual Understanding
+
+```bash
+accelerate launch --num_processes=1 generate_understanding.py \
+    --model_name_or_path="path/to/OneCAT-3B" \
+    --img_path="assets/chat.png" \
+    --question="What is d in the last equation?" \
+```
+
+### Text-to-Image Generation
+
+```bash
+accelerate launch --num_processes=1 generate_txt2img.py \
+    --model_name_or_path="path/to/OneCAT-3B" \
+    --vae_path="path/to/infinity_vae_d32reg.pth" \
+    --prompt="a photo of a bench" \
+    --output_dir="output/txt2img" \
+```
+
+### Image Editing
+
+```bash
+accelerate launch --num_processes=1 generate_imgedit.py \
+    --model_name_or_path="path/to/OneCAT-3B" \
+    --vae_path="path/to/infinity_vae_d32reg.pth" \
+    --image_path="assets/imgedit.png" \
+    --prompt="Replace the bird in the image with a small rabbit." \
+    --output_dir="output/imgedit" \
+```
+
+
 ## Contact
 If you have any questions, you can either create issues or contact us by email wangyaoming03@meituan.com
 
@@ -59,3 +103,10 @@ If you have any questions, you can either create issues or contact us by email w
 
 ## 📜 License
 OneCAT is licensed under the Apache 2.0.
+
+## Acknowledgments
+
+This work builds upon the following great open-source projects:
+- **Mono-InternVL** (https://github.com/OpenGVLab/Mono-InternVL)
+- **Infinity** (https://github.com/FoundationVision/Infinity)
+- **Qwen** (https://github.com/QwenLM/Qwen3)
