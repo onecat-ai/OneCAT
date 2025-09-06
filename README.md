@@ -70,7 +70,7 @@ accelerate launch --num_processes=1 generate_understanding.py \
 accelerate launch --num_processes=1 generate_txt2img.py \
     --model_name_or_path="path/to/OneCAT-3B" \
     --vae_path="path/to/infinity_vae_d32reg.pth" \
-    --prompt="a photo of a bench" \
+    --prompt="Fashion model with iridescent makeup, prismatic light reflections, high-fashion studio setting." \
     --output_dir="output/txt2img" \
 ```
 
