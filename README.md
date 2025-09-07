@@ -13,7 +13,7 @@
     <img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20OneCAT-Model-yellow" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://onecat-ai.github.io/" target="_blank" style="margin: 2px;">
-    <img alt="Website" src="https://img.shields.io/badge/OneCAT-Website-0A66C2?logo=safari&logoColor=white" style="display: inline-block; vertical-align: middle;"/>
+    <img alt="Homepage" src="https://img.shields.io/badge/🏠 OneCAT-Homepage-0A66C2?logoColor=white" style="display: inline-block; vertical-align: middle;"/>
   </a>
 </div>
 
