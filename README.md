@@ -57,32 +57,42 @@ For more details, please refer to the [***OneCAT Technical Report***](https://ar
 
 ### Visual Understanding
 
+Use the following command to run visual understanding with the OneCAT-3B model:
+
 ```bash
 accelerate launch --num_processes=1 generate_understanding.py \
-    --model_name_or_path="path/to/OneCAT-3B" \
-    --img_path="assets/chat.png" \
-    --question="What is d in the last equation?" \
+  --model_name_or_path="path/to/OneCAT-3B" \
+  --img_path="assets/chat.png" \
+  --question="What is d in the last equation?"
 ```
 
 ### Text-to-Image Generation
 
+Use the following command to generate images from text with the OneCAT-3B model:
+
 ```bash
 accelerate launch --num_processes=1 generate_txt2img.py \
-    --model_name_or_path="path/to/OneCAT-3B" \
-    --vae_path="path/to/infinity_vae_d32reg.pth" \
-    --prompt="Fashion model with iridescent makeup, prismatic light reflections, high-fashion studio setting." \
-    --output_dir="output/txt2img" \
+  --model_name_or_path="path/to/OneCAT-3B" \
+  --vae_path="path/to/infinity_vae_d32reg.pth" \
+  --prompt="Fashion model with iridescent makeup, prismatic light reflections, high-fashion studio setting." \
+  --output_dir="output/txt2img"
 ```
+
+Optional arguments:
+- `--t2i_stage`: 2 ≈ 0.25M px (512×512); 3 ≈ 1.0M px (1024×1024).
+- `--h_div_w`: height-to-width ratio of the output image.
 
 ### Image Editing
 
+Use the following command to edit an image with the OneCAT-3B model:
+
 ```bash
 accelerate launch --num_processes=1 generate_imgedit.py \
-    --model_name_or_path="path/to/OneCAT-3B" \
-    --vae_path="path/to/infinity_vae_d32reg.pth" \
-    --image_path="assets/imgedit.png" \
-    --prompt="Replace the bird in the image with a small rabbit." \
-    --output_dir="output/imgedit" \
+  --model_name_or_path="path/to/OneCAT-3B" \
+  --vae_path="path/to/infinity_vae_d32reg.pth" \
+  --image_path="assets/imgedit.png" \
+  --prompt="Replace the bird in the image with a small rabbit." \
+  --output_dir="output/imgedit"
 ```
 
 

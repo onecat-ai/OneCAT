@@ -22,6 +22,7 @@ def parse_args():
 
     # Generation controls
     parser.add_argument("--t2i_stage", type=int, default=3, help="T2I training stage indicator used for VAE config.")
+    parser.add_argument("--h_div_w", type=float, default=1.0, help="Height divided by width of generated images.")
     parser.add_argument("--num_imgs_per_text", type=int, default=1, help="Number of images to generate per prompt.")
     parser.add_argument("--cfg", type=float, default=5, help="Classifier-free guidance strength.")
     parser.add_argument("--top_k", type=int, default=2, help="Top-k sampling.")
@@ -92,7 +93,7 @@ def main(args):
         top_p=args.top_p,
         use_cache=True,
         return_dict=True,
-        h_div_w=1.0,
+        h_div_w=args.h_div_w,
     )
     imgs = []
     with torch.no_grad():
