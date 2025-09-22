@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("--t2i_stage", type=int, default=3, help="T2I training stage indicator used for VAE config.")
     parser.add_argument("--h_div_w", type=float, default=1.0, help="Height divided by width of generated images.")
     parser.add_argument("--num_imgs_per_text", type=int, default=1, help="Number of images to generate per prompt.")
-    parser.add_argument("--cfg", type=float, default=5, help="Classifier-free guidance strength.")
+    parser.add_argument("--cfg", type=float, default=20, help="Classifier-free guidance strength.")
     parser.add_argument("--top_k", type=int, default=2, help="Top-k sampling.")
     parser.add_argument("--top_p", type=float, default=0.97, help="Top-p sampling.")
     parser.add_argument("--max_input_tokens", type=int, default=1024, help="Max tokens for tokenizer inputs.")
